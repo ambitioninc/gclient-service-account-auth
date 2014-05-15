@@ -39,9 +39,7 @@ class AuthorizedService(object):
         service_account_email = os.environ.get('DEFAULT_SERVICE_ACCOUNT_EMAIL')
         private_key_location = os.environ.get('DEFAULT_KEY_LOCATION')
         with open(private_key_location, 'rb') as f:
-            print f
             key = f.read()
-        print key
         credentials = SignedJwtAssertionCredentials(
             service_account_email,
             key,
