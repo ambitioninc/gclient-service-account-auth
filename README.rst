@@ -30,7 +30,7 @@ This project is in PyPi and is installable with ``pip``.
 
 .. code-block:: none
 
-   pip install service_account_auth
+   pip install service-account-auth
 
 Because this library depends on the cryptography library, which has
 extensions written in C, OSX Mavericks users may experience difficulty
