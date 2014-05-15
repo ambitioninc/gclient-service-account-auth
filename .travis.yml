@@ -4,7 +4,7 @@ python:
 install:
   - pip install -q coverage flake8
 before_script:
-  - flake8 . --max-line-length=120 --max-complexity=10 --exclude'env,*.egg'
+  - flake8 . --max-line-length=120 --max-complexity=10 --exclude='env,*.egg'
 script:
   - coverage run --source='service_account_auth' --branch setup.py test
   - coverage report --fail-under=100 --show-missing
