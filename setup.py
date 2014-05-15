@@ -9,7 +9,7 @@ def get_version():
     """
     Extracts the version number from the version.py file.
     """
-    VERSION_FILE = '{{ project_name }}/version.py'
+    VERSION_FILE = 'service_account_auth/version.py'
     mo = re.search(r'^__version__ = [\'"]([^\'"]*)[\'"]', open(VERSION_FILE, 'rt').read(), re.M)
     if mo:
         return mo.group(1)
@@ -37,7 +37,9 @@ setup(
     ],
     license='MIT',
     install_requires=[
-        ''
+        'httplib2>=0.9',
+        'google-api-python-client>=1.2',
+        'pyopenssl>=0.14',
     ],
     tests_require=[
         'nose',
