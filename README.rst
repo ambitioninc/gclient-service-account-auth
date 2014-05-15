@@ -26,7 +26,9 @@ server to server requests to any supported API.
 Installation
 --------------------------------------------------
 
-    pip install gclient-service-account-auth
+.. code-block:: none
+
+   pip install service_account_auth
 
 Usage
 --------------------------------------------------
@@ -56,23 +58,23 @@ To get a private key that google will accept do the following:
 Once the steps above are complete, it's simple to create an authorized
 service object that can access a given API:
 
-    .. code:: python
+.. code-block:: python
 
-    from service_account_auth import AuthorizedService
+   from service_account_auth import AuthorizedService
 
-    my_analytics_service = AuthorizedService(
-        project_id='my-projectid-555',
-        service_name='analytics',
-        service_version='v3'
-    )
+   my_analytics_service = AuthorizedService(
+       project_id='my-projectid-555',
+       service_name='analytics',
+       service_version='v3'
+   )
 
 The code above will create an authorized service object which can be
 used to access google analytics API endpoints:
 
-    .. code:: python
+.. code-block:: python
 
-    s = my_analytics_service.service
-    analytics_account_list = s.management().accounts().list().execute()
+   s = my_analytics_service.service
+   analytics_account_list = s.management().accounts().list().execute()
 
 Likewise, by varying the ``service_name`` and ``service_version``
 arguments, you can access any available API with the same format and
