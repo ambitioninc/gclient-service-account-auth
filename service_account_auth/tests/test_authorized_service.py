@@ -4,13 +4,13 @@ from apiclient.discovery import Resource
 from httplib2 import Http
 from mock import MagicMock, patch
 
-from retention.authorized_service import AuthorizedService
+from service_account_auth import AuthorizedService
 
 
 class Test_AuthorizedService(unittest.TestCase):
     """Test the initialization of the service
     """
-    @patch('retention.authorized_service.AuthorizedService._get_authorized_http')
+    @patch('service_account_auth.AuthorizedService._get_authorized_http')
     def test_init(self, get_http_mock):
         get_http_mock.return_value = Http()
         authorized_service = AuthorizedService('test-proj', 'bigquery', 'v2')
@@ -38,9 +38,10 @@ class Test_AuthorizedService_get_authorized_http(unittest.TestCase):
         self.mock_auth.service_name = 'bigquery'
         self.mock_auth._get_authorized_http = AuthorizedService.__dict__['_get_authorized_http']
 
-    def test_returns_http_object(self):
-        # return __init__.py as the location of the key. An empty file.
+    @patch('__builtin__.open')
+    def test_returns_http_object(self, open_mock):
+        open_mock.return_value.__enter__.return_value.read.return_value = 'testkeypleaseignore'
         with patch('os.environ.get') as mock_get:
-            mock_get.side_effect = lambda *args: 'retention/__init__.py'
+            mock_get.return_value = 'private/key/location'
             http = self.mock_auth._get_authorized_http(self.mock_auth)
         self.assertIsInstance(http, Http)

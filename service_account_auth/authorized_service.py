@@ -1,10 +1,8 @@
-import httplib2
 import os
 
 from apiclient import discovery
 from oauth2client.client import SignedJwtAssertionCredentials
-
-import settings
+import httplib2
 
 
 class AuthorizedService(object):
@@ -38,10 +36,12 @@ class AuthorizedService(object):
             'bigquery': 'https://www.googleapis.com/auth/bigquery',
             'analytics': 'https://www.googleapis.com/auth/analytics.readonly'
         }
-        service_account_email = settings.DEFAULT_SERVICE_ACCOUNT_EMAIL
-        private_key_location = os.environ.get(settings.DEFAULT_KEY_LOCATION_ENV_VAR)
+        service_account_email = os.environ.get('DEFAULT_SERVICE_ACCOUNT_EMAIL')
+        private_key_location = os.environ.get('DEFAULT_KEY_LOCATION')
         with open(private_key_location, 'rb') as f:
+            print f
             key = f.read()
+        print key
         credentials = SignedJwtAssertionCredentials(
             service_account_email,
             key,
