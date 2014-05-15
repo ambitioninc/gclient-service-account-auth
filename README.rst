@@ -26,9 +26,22 @@ server to server requests to any supported API.
 Installation
 --------------------------------------------------
 
+This project is in PyPi and is installable with ``pip``.
+
 .. code-block:: none
 
    pip install service_account_auth
+
+Because this library depends on the cryptography library, which has
+extensions written in C, OSX Mavericks users may experience difficulty
+with the ``pip`` installation. If the error is akin to "command 'cc'
+failed with exit status 1" Executing (in bash):
+
+.. code-block:: none
+
+   export CFLAGS=""
+
+before running ``pip install`` should fix the problem.
 
 Usage
 --------------------------------------------------
