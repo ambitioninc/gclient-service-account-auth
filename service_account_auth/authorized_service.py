@@ -34,7 +34,8 @@ class AuthorizedService(object):
         """
         scopes = {
             'bigquery': 'https://www.googleapis.com/auth/bigquery',
-            'analytics': 'https://www.googleapis.com/auth/analytics.readonly'
+            'analytics-read': 'https://www.googleapis.com/auth/analytics.readonly',
+            'analytics': 'https://www.googleapis.com/auth/analytics'
         }
         service_account_email = os.environ.get('DEFAULT_SERVICE_ACCOUNT_EMAIL')
         private_key_location = os.environ.get('DEFAULT_KEY_LOCATION')
