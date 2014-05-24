@@ -18,7 +18,7 @@ def get_version():
 
 
 setup(
-    name='service_account_auth',
+    name='gclient-service-account-auth',
     version=get_version(),
     description=(
         "Easily create an authorized service-object "
