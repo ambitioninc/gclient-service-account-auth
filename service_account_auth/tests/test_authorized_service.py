@@ -8,7 +8,7 @@ from service_account_auth import AuthorizedService
 from service_account_auth.authorized_service import get_email_and_key
 
 
-class Test_AuthorizedService(unittest.TestCase):
+class AuthorizedServiceTest(unittest.TestCase):
     """Test the initialization of the service
     """
     @patch('service_account_auth.AuthorizedService._get_authorized_http')
@@ -19,7 +19,7 @@ class Test_AuthorizedService(unittest.TestCase):
         self.assertTrue(authorized_service.auth_http)
 
 
-class Test_AuthorizedService_get_service(unittest.TestCase):
+class AuthorizedServiceGetServiceTest(unittest.TestCase):
     def setUp(self):
         """Pin the method to a mock object.
         """
@@ -31,7 +31,7 @@ class Test_AuthorizedService_get_service(unittest.TestCase):
         self.assertIsInstance(service, Resource)
 
 
-class Test_AuthorizedService_get_authorized_http(unittest.TestCase):
+class AuthorizedServiceGetAuthorizedHttpTest(unittest.TestCase):
     def setUp(self):
         """Pin the method to a mock object.
         """
