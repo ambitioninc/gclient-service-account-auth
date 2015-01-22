@@ -8,6 +8,46 @@ import httplib2
 class AuthorizedService(object):
     def __init__(self, project_id, service_name, service_version, email=None, key=None):
         """Set up the service and http objects for future requests.
+
+        Once an AuthorizedService instance is initiated, the
+        AuthorizedService.service attribute will be the entrypoint for
+        future calls to the google api of interest.
+
+        :type project_id: str
+        :param project_id: The id of a Google Developer Project setup
+            from the `Developer Console`_. This will likely be in the
+            form ``'someword-otherword-###'``.
+
+        :type service_name: str
+        :param service_name: The name of the service you want to
+            connect to. For example, ``'analytics'`` for Google
+            Analytics or ``'bigquery'`` for BigQuery. Currently,
+            only some libaries are supported. File a github
+            issue if you would like another supported.
+
+        :type service_version: str
+        :param service_version: The version of the api to connect
+            to. A list of the current versions can be found on the
+            list of `Google APIs for Python`_
+
+        :type email: str (optional)
+        :param email: The email for the service account
+            associated with the project. To create a service account,
+            see this documentation on creating `Service Account`_.
+            If this argument is not provided it will be fetched using
+            the :py:func:`get_email_and_key` function.
+
+        :type key: str (optional)
+        :param key: The private key for the service account. This is
+            the key created during creation of the service account.
+            If this argument is not provided it will be fetched using
+            the :py:func:`get_email_and_key` function.
+
+        .. _Developer Console: https://github.com/ambitioninc/django-entity/
+
+        .. _Google APIs for Python: https://developers.google.com/api-client-library/python/apis/
+
+        .. Service Account: https://developers.google.com/accounts/docs/OAuth2ServiceAccount#creatinganaccount
         """
         self.project_id = project_id
         self.service_name = service_name
