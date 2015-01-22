@@ -6,11 +6,12 @@ import httplib2
 
 
 class AuthorizedService(object):
-    def __init__(self, project_id, service_name, service_version):
+    def __init__(self, project_id, service_name, service_version, email=None, key=None):
         """Set up the service and http objects for future requests.
         """
         self.project_id = project_id
         self.service_name = service_name
+        self.email, self.key = get_email_and_key(email, key)
         self.auth_http = self._get_authorized_http()
         self.service = self._get_service(service_name, service_version, self.auth_http)
 
@@ -37,13 +38,9 @@ class AuthorizedService(object):
             'analytics-read': 'https://www.googleapis.com/auth/analytics.readonly',
             'analytics': 'https://www.googleapis.com/auth/analytics'
         }
-        service_account_email = os.environ.get('DEFAULT_SERVICE_ACCOUNT_EMAIL')
-        private_key_location = os.environ.get('DEFAULT_KEY_LOCATION')
-        with open(private_key_location, 'rb') as f:
-            key = f.read()
         credentials = SignedJwtAssertionCredentials(
-            service_account_email,
-            key,
+            self.email,
+            self.key,
             scope=scopes[self.service_name]
         )
         http = httplib2.Http()

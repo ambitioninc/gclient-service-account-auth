@@ -37,14 +37,12 @@ class AuthorizedServiceGetAuthorizedHttpTest(unittest.TestCase):
         """
         self.mock_auth = MagicMock()
         self.mock_auth.service_name = 'bigquery'
+        self.mock_auth.email='test@example.com'
+        self.mock_auth.key='testkey'
         self.mock_auth._get_authorized_http = AuthorizedService.__dict__['_get_authorized_http']
 
-    @patch('__builtin__.open')
-    def test_returns_http_object(self, open_mock):
-        open_mock.return_value.__enter__.return_value.read.return_value = 'testkeypleaseignore'
-        with patch('os.environ.get') as mock_get:
-            mock_get.return_value = 'private/key/location'
-            http = self.mock_auth._get_authorized_http(self.mock_auth)
+    def test_returns_http_object(self):
+        http = self.mock_auth._get_authorized_http(self.mock_auth)
         self.assertIsInstance(http, Http)
 
 
