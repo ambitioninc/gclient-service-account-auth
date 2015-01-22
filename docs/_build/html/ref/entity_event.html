@@ -1,0 +1,916 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Code documentation &mdash; entity_event 0.2.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="entity_event 0.2.0 documentation" href="../index.html"/>
+        <link rel="next" title="Contributing" href="../contributing.html"/>
+        <link rel="prev" title="Advanced Features" href="../advanced_features.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> entity_event</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#installation-with-pip">Installation with Pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#use-with-django">Use with Django</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart and Basic Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#creating-and-categorizing-events">Creating and Categorizing Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#managing-mediums-and-subscriptions-to-events">Managing Mediums and Subscriptions to Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#querying-events">Querying Events</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_features.html">Advanced Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_features.html#custom-context-loaders">Custom Context Loaders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_features.html#customizing-only-following-behavior">Customizing Only-Following Behavior</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#running-the-tests">Running the tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#code-quality">Code Quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#code-styling">Code Styling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#building-the-docs">Building the docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#release-checklist">Release Checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing.html#vulnerability-reporting">Vulnerability Reporting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html#v0-2">v0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html#v0-1">v0.1</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">entity_event</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Code documentation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/ref/entity_event.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="module-entity_event.models">
+<span id="code-documentation"></span><span id="ref-entity-event"></span><h1>Code documentation<a class="headerlink" href="#module-entity_event.models" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="entity_event.models.Medium">
+<em class="property">class </em><tt class="descclassname">entity_event.models.</tt><tt class="descname">Medium</tt><a class="headerlink" href="#entity_event.models.Medium" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <tt class="docutils literal"><span class="pre">Medium</span></tt> is an object in the database that defines the method
+by which users will view events. The actual objects in the
+database are fairly simple, only requiring a <tt class="docutils literal"><span class="pre">name</span></tt>,
+<tt class="docutils literal"><span class="pre">display_name</span></tt> and <tt class="docutils literal"><span class="pre">description</span></tt>. Mediums can be created with
+<tt class="docutils literal"><span class="pre">Medium.objects.create</span></tt>, using the following parameters:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<a class="reference external" href="http://python.readthedocs.org/en/v2.7.2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; A short, unique name for the medium.</li>
+<li><strong>display_name</strong> (<a class="reference external" href="http://python.readthedocs.org/en/v2.7.2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; A short, human readable name for the medium.
+Does not need to be unique.</li>
+<li><strong>description</strong> (<a class="reference external" href="http://python.readthedocs.org/en/v2.7.2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; A human readable description of the
+medium.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Encoding a <tt class="docutils literal"><span class="pre">Medium</span></tt> object in the database serves two
+purposes. First, it is referenced when subscriptions are
+created. Second the <tt class="docutils literal"><span class="pre">Medium</span></tt> objects provide an entry point to
+query for events and have all the subscription logic and filtering
+taken care of for you.</p>
+<p>Any time a new way to display events to a user is created, a
+corresponding <tt class="docutils literal"><span class="pre">Medium</span></tt> should be created. Some examples could
+include a medium for sending email notifications, a medium for
+individual newsfeeds, or a medium for a site wide notification
+center.</p>
+<p>Once a medium object is created, and corresponding subscriptions
+are created, there are three methods on the medium object that can
+be used to query for events. They are <tt class="docutils literal"><span class="pre">events</span></tt>,
+<tt class="docutils literal"><span class="pre">entity_events</span></tt> and <tt class="docutils literal"><span class="pre">events_targets</span></tt>. The differences between
+these methods are described in their corresponding documentation.</p>
+<dl class="method">
+<dt id="entity_event.models.Medium.events">
+<tt class="descname">events</tt><big>(</big><em>self</em>, <em>**event_filters</em><big>)</big><a class="headerlink" href="#entity_event.models.Medium.events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return subscribed events, with basic filters.</p>
+<p>This method of getting events is useful when you want to
+display events for your medium, independent of what entities
+were involved in those events. For example, this method can be
+used to display a list of site-wide events that happened in the
+past 24 hours:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">TEMPLATE</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;</span>
+<span class="s">    &lt;html&gt;&lt;body&gt;</span>
+<span class="s">    &lt;h1&gt; Yoursite&#39;s Events &lt;/h1&gt;</span>
+<span class="s">    &lt;ul&gt;</span>
+<span class="s">    {</span><span class="si">% f</span><span class="s">or event in events %}</span>
+<span class="s">        &lt;li&gt; {{ event.context.event_text }} &lt;/li&gt;</span>
+<span class="s">    {</span><span class="si">% e</span><span class="s">ndfor %}</span>
+<span class="s">    &lt;/ul&gt;</span>
+<span class="s">    &lt;/body&gt;&lt;/html&gt;</span>
+<span class="s">&#39;&#39;&#39;</span>
+
+<span class="k">def</span> <span class="nf">site_feed</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">site_feed_medium</span> <span class="o">=</span> <span class="n">Medium</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;site_feed&#39;</span><span class="p">)</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">context</span><span class="p">[</span><span class="s">&#39;events&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">site_feed_medium</span><span class="o">.</span><span class="n">events</span><span class="p">(</span><span class="n">start_time</span><span class="o">=</span><span class="n">start_time</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">TEMPLATE</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>While the <cite>events</cite> method does not filter events based on what
+entities are involved, filtering based on the properties of the events
+themselves is supported, through the following arguments, all
+of which are optional.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start_time</strong> (<em>datetime.datetime (optional)</em>) &#8211; Only return events that occurred after the
+given time. If no time is given for this argument, no
+filtering is done.</li>
+<li><strong>end_time</strong> (<em>datetime.datetime (optional)</em>) &#8211; Only return events that occurred before the
+given time. If no time is given for this argument, no
+filtering is done</li>
+<li><strong>seen</strong> (<em>Boolean (optional)</em>) &#8211; This flag controls whether events that have
+marked as seen are included. By default, both events that
+have and have not been marked as seen are included. If
+<tt class="docutils literal"><span class="pre">True</span></tt> is given for this parameter, only events that
+have been marked as seen will be included. If <tt class="docutils literal"><span class="pre">False</span></tt> is
+given, only events that have not been marked as seen will
+be included.</li>
+<li><strong>include_expired</strong> (<em>Boolean (optional)</em>) &#8211; By default, events that have a
+expiration time, which has passed, are not included in the
+results. Passing in <tt class="docutils literal"><span class="pre">True</span></tt> to this argument causes
+expired events to be returned as well.</li>
+<li><strong>actor</strong> (<em>Entity (optional)</em>) &#8211; Only include events with the given entity as an
+actor.</li>
+<li><strong>mark_seen</strong> (<em>Boolean (optional)</em>) &#8211; Create a side effect in the database that
+marks all the returned events as having been seen by this
+medium.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">EventQuerySet</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A queryset of events.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="entity_event.models.Medium.entity_events">
+<tt class="descname">entity_events</tt><big>(</big><em>self</em>, <em>entity</em>, <em>**event_filters</em><big>)</big><a class="headerlink" href="#entity_event.models.Medium.entity_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return subscribed events for a given entity.</p>
+<p>This method of getting events is useful when you want to see
+only the events relevant to a single entity. The events
+returned are events that the given entity is subscribed to,
+either directly as an individual entity, or because they are
+part of a group subscription. As an example, the
+<cite>entity_events</cite> method can be used to implement a newsfeed for
+a individual entity:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">TEMPLATE</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;</span>
+<span class="s">    &lt;html&gt;&lt;body&gt;</span>
+<span class="s">    &lt;h1&gt; {entity}&#39;s Events &lt;/h1&gt;</span>
+<span class="s">    &lt;ul&gt;</span>
+<span class="s">    {</span><span class="si">% f</span><span class="s">or event in events %}</span>
+<span class="s">        &lt;li&gt; {{ event.context.event_text }} &lt;/li&gt;</span>
+<span class="s">    {</span><span class="si">% e</span><span class="s">ndfor %}</span>
+<span class="s">    &lt;/ul&gt;</span>
+<span class="s">    &lt;/body&gt;&lt;/html&gt;</span>
+<span class="s">&#39;&#39;&#39;</span>
+
+<span class="k">def</span> <span class="nf">newsfeed</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">newsfeed_medium</span> <span class="o">=</span> <span class="n">Medium</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;newsfeed&#39;</span><span class="p">)</span>
+    <span class="n">entity</span> <span class="o">=</span> <span class="n">Entity</span><span class="o">.</span><span class="n">get_for_obj</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">context</span><span class="p">[</span><span class="s">&#39;entity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">entity</span>
+    <span class="n">context</span><span class="p">[</span><span class="s">&#39;events&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">site_feed_medium</span><span class="o">.</span><span class="n">entity_events</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">seen</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">mark_seen</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">TEMPLATE</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The only required argument for this method is the entity to
+get events for. Filtering based on the properties of the
+events themselves is supported, through the rest of the
+following arguments, which are optional.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type_entity:</th><td class="field-body"><p class="first">Entity</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity</strong> &#8211; The entity to get events for.</li>
+<li><strong>start_time</strong> (<em>datetime.datetime (optional)</em>) &#8211; Only return events that occurred after the
+given time. If no time is given for this argument, no
+filtering is done.</li>
+<li><strong>end_time</strong> (<em>datetime.datetime (optional)</em>) &#8211; Only return events that occurred before the
+given time. If no time is given for this argument, no
+filtering is done</li>
+<li><strong>seen</strong> (<em>Boolean (optional)</em>) &#8211; This flag controls whether events that have
+marked as seen are included. By default, both events that
+have and have not been marked as seen are included. If
+<tt class="docutils literal"><span class="pre">True</span></tt> is given for this parameter, only events that
+have been marked as seen will be included. If <tt class="docutils literal"><span class="pre">False</span></tt> is
+given, only events that have not been marked as seen will
+be included.</li>
+<li><strong>include_expired</strong> (<em>Boolean (optional)</em>) &#8211; By default, events that have a
+expiration time, which has passed, are not included in the
+results. Passing in <tt class="docutils literal"><span class="pre">True</span></tt> to this argument causes
+expired events to be returned as well.</li>
+<li><strong>actor</strong> (<em>Entity (optional)</em>) &#8211; Only include events with the given entity as an
+actor.</li>
+<li><strong>mark_seen</strong> (<em>Boolean (optional)</em>) &#8211; Create a side effect in the database that
+marks all the returned events as having been seen by this
+medium.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">EventQuerySet</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A queryset of events.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="entity_event.models.Medium.events_targets">
+<tt class="descname">events_targets</tt><big>(</big><em>self</em>, <em>entity_kind</em>, <em>**event_filters</em><big>)</big><a class="headerlink" href="#entity_event.models.Medium.events_targets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all events for this medium, with who each event is for.</p>
+<p>This method is useful for individually notifying every
+entity concerned with a collection of events, while
+still respecting subscriptions and usubscriptions. For
+example, <tt class="docutils literal"><span class="pre">events_targets</span></tt> can be used to send email
+notifications, by retrieving all unseen events (and marking
+them as now having been seen), and then processing the
+emails. In code, this could look like:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">email</span> <span class="o">=</span> <span class="n">Medium</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;email&#39;</span><span class="p">)</span>
+<span class="n">new_emails</span> <span class="o">=</span> <span class="n">email</span><span class="o">.</span><span class="n">events_targets</span><span class="p">(</span><span class="n">seen</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">mark_seen</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">event</span><span class="p">,</span> <span class="n">targets</span> <span class="ow">in</span> <span class="n">new_emails</span><span class="p">:</span>
+    <span class="n">django</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">mail</span><span class="o">.</span><span class="n">send_mail</span><span class="p">(</span>
+        <span class="n">subject</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">context</span><span class="p">[</span><span class="s">&quot;subject&quot;</span><span class="p">]</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">context</span><span class="p">[</span><span class="s">&quot;message&quot;</span><span class="p">]</span>
+        <span class="n">recipient_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">entity_meta</span><span class="p">[</span><span class="s">&quot;email&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">targets</span><span class="p">]</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>This <tt class="docutils literal"><span class="pre">events_targets</span></tt> method attempts to make bulk
+processing of push-style notifications straightforward. This
+sort of processing should normally occur in a separate thread
+from any request/response cycle.</p>
+<p>Filtering based on the properties of the events themselves is
+supported, through the rest of the following arguments, which
+are optional.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>entity_kind</strong> (<em>EntityKind</em>) &#8211; Only include targets of the given kind in
+each targets list.</li>
+<li><strong>start_time</strong> (<em>datetime.datetime (optional)</em>) &#8211; Only return events that occurred after the
+given time. If no time is given for this argument, no
+filtering is done.</li>
+<li><strong>end_time</strong> (<em>datetime.datetime (optional)</em>) &#8211; Only return events that occurred before the
+given time. If no time is given for this argument, no
+filtering is done</li>
+<li><strong>seen</strong> (<em>Boolean (optional)</em>) &#8211; This flag controls whether events that have
+marked as seen are included. By default, both events that
+have and have not been marked as seen are included. If
+<tt class="docutils literal"><span class="pre">True</span></tt> is given for this parameter, only events that
+have been marked as seen will be included. If <tt class="docutils literal"><span class="pre">False</span></tt> is
+given, only events that have not been marked as seen will
+be included.</li>
+<li><strong>include_expired</strong> (<em>Boolean (optional)</em>) &#8211; By default, events that have a
+expiration time, which has passed, are not included in the
+results. Passing in <tt class="docutils literal"><span class="pre">True</span></tt> to this argument causes
+expired events to be returned as well.</li>
+<li><strong>actor</strong> (<em>Entity (optional)</em>) &#8211; Only include events with the given entity as an
+actor.</li>
+<li><strong>mark_seen</strong> (<em>Boolean (optional)</em>) &#8211; Create a side effect in the database that
+marks all the returned events as having been seen by this
+medium.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">List of tuples</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A list of tuples in the form <tt class="docutils literal"><span class="pre">(event,</span> <span class="pre">targets)</span></tt>
+where <tt class="docutils literal"><span class="pre">targets</span></tt> is a list of entities.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="entity_event.models.Medium.followed_by">
+<tt class="descname">followed_by</tt><big>(</big><em>self</em>, <em>entities</em><big>)</big><a class="headerlink" href="#entity_event.models.Medium.followed_by" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define what entities are followed by the entities passed to this
+method.</p>
+<p>This method can be overridden by a class that concretely
+inherits <tt class="docutils literal"><span class="pre">Medium</span></tt>, to define custom semantics for the
+<tt class="docutils literal"><span class="pre">only_following</span></tt> flag on relevant <tt class="docutils literal"><span class="pre">Subscription</span></tt>
+objects. Overriding this method, and <tt class="docutils literal"><span class="pre">followers_of</span></tt> will be
+sufficient to define that behavior. This method is not useful
+to call directly, but is used by the methods that filter
+events and targets.</p>
+<p>This implementation attempts to provide a sane default. In
+this implementation, the entities followed by the <tt class="docutils literal"><span class="pre">entities</span></tt>
+argument are the entities themselves, and their super entities.</p>
+<p>That is, individual entities follow themselves, and the groups
+they are a part of. This works as a default implementation,
+but, for example, an alternate medium may wish to define the
+opposite behavior, where an individual entity follows
+themselves and all of their sub-entities.</p>
+<p>Return a queryset of the entities that the given entities are
+following. This needs to be the inverse of <tt class="docutils literal"><span class="pre">followers_of</span></tt>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>entities</strong> (<em>Entity or EntityQuerySet</em>) &#8211; The Entity, or QuerySet of Entities of interest.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">EntityQuerySet</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A QuerySet of entities followed by those given.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="entity_event.models.Medium.followers_of">
+<tt class="descname">followers_of</tt><big>(</big><em>self</em>, <em>entities</em><big>)</big><a class="headerlink" href="#entity_event.models.Medium.followers_of" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define what entities are followers of the entities passed to this
+method.</p>
+<p>This method can be overridden by a class that concretely
+inherits <tt class="docutils literal"><span class="pre">Medium</span></tt>, to define custom semantics for the
+<tt class="docutils literal"><span class="pre">only_following</span></tt> flag on relevant <tt class="docutils literal"><span class="pre">Subscription</span></tt>
+objects. Overriding this method, and <tt class="docutils literal"><span class="pre">followed_by</span></tt> will be
+sufficient to define that behavior. This method is not useful
+to call directly, but is used by the methods that filter
+events and targets.</p>
+<p>This implementation attempts to provide a sane default. In
+this implementation, the followers of the entities passed in
+are defined to be the entities themselves, and their
+sub-entities.</p>
+<p>That is, the followers of individual entities are themselves,
+and if the entity has sub-entities, those sub-entities. This
+works as a default implementation, but, for example, an
+alternate medium may wish to define the opposite behavior,
+where an the followers of an individual entity are themselves
+and all of their super-entities.</p>
+<p>Return a queryset of the entities that follow the given
+entities. This needs to be the inverse of <tt class="docutils literal"><span class="pre">followed_by</span></tt>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>entities</strong> (<em>Entity or EntityQuerySet</em>) &#8211; The Entity, or QuerySet of Entities of interest.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">EntityQuerySet</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A QuerySet of entities who are followers of those
+given.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="entity_event.models.Source">
+<em class="property">class </em><tt class="descclassname">entity_event.models.</tt><tt class="descname">Source</tt><a class="headerlink" href="#entity_event.models.Source" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <tt class="docutils literal"><span class="pre">Source</span></tt> is an object in the database that represents where
+events come from. These objects only require a few fields,
+<tt class="docutils literal"><span class="pre">name</span></tt>, <tt class="docutils literal"><span class="pre">display_name</span></tt> <tt class="docutils literal"><span class="pre">description</span></tt>, <tt class="docutils literal"><span class="pre">group</span></tt> and
+optionally <tt class="docutils literal"><span class="pre">context_loader</span></tt>. Source objects categorize events
+based on where they came from, or what type of information they
+contain. Each source should be fairly fine grained, with broader
+categorizations possible through <tt class="docutils literal"><span class="pre">SourceGroup</span></tt> objects. Sources
+can be created with <tt class="docutils literal"><span class="pre">Source.objects.create</span></tt> using the following
+parameters:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<a class="reference external" href="http://python.readthedocs.org/en/v2.7.2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; A short, unique name for the source.</li>
+<li><strong>display_name</strong> (<a class="reference external" href="http://python.readthedocs.org/en/v2.7.2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; A short, human readable name for the source.
+Does not need to be unique.</li>
+<li><strong>description</strong> (<a class="reference external" href="http://python.readthedocs.org/en/v2.7.2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; A human readable description of the source.</li>
+<li><strong>group</strong> (<em>SourceGroup</em>) &#8211; A SourceGroup object. A broad grouping of where the
+events originate.</li>
+<li><strong>context_loader</strong> (<em>(optional) str</em>) &#8211; A importable path to a function, which can
+take a dictionary of context, and populate it with more
+information from the database or other sources.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Storing source objects in the database servers two purposes. The
+first is to provide an object that Subscriptions can reference,
+allowing different categories of events to be subscribed to over
+different mediums. The second is to allow source instances to
+store a reference to a function which can populate event contexts
+with additional information that is relevant to the source. This
+allows <tt class="docutils literal"><span class="pre">Event</span></tt> objects to be created with minimal data
+duplication.</p>
+<p>Once sources are created, they will primarily be used to
+categorize events, as each <tt class="docutils literal"><span class="pre">Event</span></tt> object requires a reference
+to a source. Additionally they will be referenced by
+<tt class="docutils literal"><span class="pre">Subscription</span></tt> objects to route events of the given source to be
+handled by a given medium.</p>
+<dl class="method">
+<dt id="entity_event.models.Source.get_context">
+<tt class="descname">get_context</tt><big>(</big><em>self</em>, <em>context</em><big>)</big><a class="headerlink" href="#entity_event.models.Source.get_context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the context for this source by loading it through the source&#8217;s
+context loader (if it has one).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>context</strong> (<em>Dict</em>) &#8211; A dictionary of context for an event from this
+source.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Dict</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The context provided, with any additional context
+loaded by the context loader function.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="entity_event.models.SourceGroup">
+<em class="property">class </em><tt class="descclassname">entity_event.models.</tt><tt class="descname">SourceGroup</tt><a class="headerlink" href="#entity_event.models.SourceGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <tt class="docutils literal"><span class="pre">SourceGroup</span></tt> object is a high level categorization of
+events. Since <tt class="docutils literal"><span class="pre">Source</span></tt> objects are meant to be very fine
+grained, they are collected into <tt class="docutils literal"><span class="pre">SourceGroup</span></tt> objects. There is
+no additional behavior associated with the source groups other
+than further categorization. Source groups can be created with
+<tt class="docutils literal"><span class="pre">SourceGroup.objects.create</span></tt>, which takes the following
+arguments:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<a class="reference external" href="http://python.readthedocs.org/en/v2.7.2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; A short, unique name for the source group.</li>
+<li><strong>display_name</strong> (<a class="reference external" href="http://python.readthedocs.org/en/v2.7.2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; A short, human readable name for the source
+group. Does not need to be unique.</li>
+<li><strong>description</strong> (<a class="reference external" href="http://python.readthedocs.org/en/v2.7.2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; A human readable description of the source
+group.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="entity_event.models.Unsubscription">
+<em class="property">class </em><tt class="descclassname">entity_event.models.</tt><tt class="descname">Unsubscription</tt><a class="headerlink" href="#entity_event.models.Unsubscription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Because django-entity-event allows for whole groups to be
+subscribed to events at once, unsubscribing an entity is not as
+simple as removing their subscription object. Instead, the
+Unsubscription table provides a simple way to ensure that an
+entity does not see events if they don&#8217;t want to.</p>
+<p>Unsubscriptions are created for a single entity at a time, where
+they are unsubscribed for events from a source on a medium. This
+is stored as an <tt class="docutils literal"><span class="pre">Unsubscription</span></tt> object in the database, which
+can be created using <tt class="docutils literal"><span class="pre">Unsubscription.objects.create</span></tt> using the
+following arguments:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>entity</strong> (<em>Entity</em>) &#8211; The entity to unsubscribe.</li>
+<li><strong>medium</strong> (<em>Medium</em>) &#8211; The <tt class="docutils literal"><span class="pre">Medium</span></tt> object representing where they don&#8217;t
+want to see the events.</li>
+<li><strong>source</strong> (<em>Source</em>) &#8211; The <tt class="docutils literal"><span class="pre">Source</span></tt> object representing what category
+of event they no longer want to see.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Once an <tt class="docutils literal"><span class="pre">Unsubscription</span></tt> object is created, all of the logic to
+ensure that they do not see events form the given source by the
+given medium is handled by the methods used to query for events
+via the <tt class="docutils literal"><span class="pre">Medium</span></tt> object. That is, once the object is created, no
+more work is needed to unsubscribe them.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="entity_event.models.Subscription">
+<em class="property">class </em><tt class="descclassname">entity_event.models.</tt><tt class="descname">Subscription</tt><a class="headerlink" href="#entity_event.models.Subscription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Which types of events are available to which mediums is controlled
+through <tt class="docutils literal"><span class="pre">Subscription</span></tt> objects. By creating a <tt class="docutils literal"><span class="pre">Subscription</span></tt>
+object in the database, you are storing that events from a given
+<tt class="docutils literal"><span class="pre">Source</span></tt> object should be available to a given <tt class="docutils literal"><span class="pre">Medium</span></tt>
+object.</p>
+<p>Each <tt class="docutils literal"><span class="pre">Subscription</span></tt> object can be one of two levels, either an
+individual subscription or a group subscription. Additionally,
+each <tt class="docutils literal"><span class="pre">Subscription</span></tt> object can be one of two types of
+subscription, either a global subscription, or an &#8220;only following&#8221;
+subscription. <tt class="docutils literal"><span class="pre">Subscription</span></tt> objects are created using
+<tt class="docutils literal"><span class="pre">Subscription.objects.create</span></tt> which takes the following
+arguments:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>medium</strong> (<em>Medium</em>) &#8211; The <tt class="docutils literal"><span class="pre">Medium</span></tt> object to make events available to.</li>
+<li><strong>source</strong> (<em>Source</em>) &#8211; The <tt class="docutils literal"><span class="pre">Source</span></tt> object that represents the category
+of events to make available.</li>
+<li><strong>entity</strong> (<em>Entity</em>) &#8211; The entity to subscribe in the case of an
+individual subscription, or in the case of a group
+subscription, the super-entity of the group.</li>
+<li><strong>sub_entity_kind</strong> (<em>(optional) EntityKind</em>) &#8211; When creating a group subscription, this
+is a foreign key to the <tt class="docutils literal"><span class="pre">EntityKind</span></tt> of the sub-entities to
+subscribe. In the case of an individual subscription, this should
+be <tt class="docutils literal"><span class="pre">None</span></tt>.</li>
+<li><strong>only_following</strong> (<em>Boolean</em>) &#8211; If <tt class="docutils literal"><span class="pre">True</span></tt>, events will be available to
+entities through the medium only if the entities are following
+the actors of the event. If <tt class="docutils literal"><span class="pre">False</span></tt>, the events will all
+be available to all the entities through the medium.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>When a <tt class="docutils literal"><span class="pre">Medium</span></tt> object is used to query for events, only the
+events that have a subscription for their source to that medium
+will ever be returned. This is an extremely useful property that
+allows complex subscription logic to be handled simply by storing
+subscription objects in the database.</p>
+<p>Storing subscriptions is made simpler by the ability to subscribe
+groups of entities with a single subscription object.  Groups of
+entities of a given kind can be subscribed by subscribing their
+super-entity and providing the <tt class="docutils literal"><span class="pre">sub_entity_kind</span></tt> argument.</p>
+<p>Subscriptions further are specified to be either an &#8220;only following&#8221;
+subscription or not. This specification controls what
+events will be returned when <tt class="docutils literal"><span class="pre">Medium.entity_events</span></tt> is called,
+and controls what targets are returned when
+<tt class="docutils literal"><span class="pre">Medium.events_targets</span></tt> is called.</p>
+<p>For example, if events are created for a new photo being uploaded
+(from a single source called, say &#8220;photos&#8221;), and we want to provide
+individuals with a notification in their newsfeed (through a
+medium called &#8220;newsfeed&#8221;), we want to be able to display only the
+events where the individual is tagged in the photo. By setting
+<tt class="docutils literal"><span class="pre">only_following</span></tt> to true the following code would only return
+events where the individual was included in the <tt class="docutils literal"><span class="pre">EventActor</span></tt> s,
+rather than returning all &#8220;photos&#8221; events:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">user_entity</span> <span class="o">=</span> <span class="n">Entity</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_for_obj</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+<span class="n">newsfeed_medium</span> <span class="o">=</span> <span class="n">Medium</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;newsfeed&#39;</span><span class="p">)</span>
+<span class="n">newsfeed</span><span class="o">.</span><span class="n">entity_events</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The behavior of what constitutes &#8220;following&#8221; is controlled by the
+Medium class. A default implementation of following is provided
+and documented in the <tt class="docutils literal"><span class="pre">Medium.followers_of</span></tt> and
+<tt class="docutils literal"><span class="pre">Medium.followed_by</span></tt> methods, but could be extended by
+subclasses of Medium.</p>
+<dl class="method">
+<dt id="entity_event.models.Subscription.subscribed_entities">
+<tt class="descname">subscribed_entities</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#entity_event.models.Subscription.subscribed_entities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a queryset of all subscribed entities.</p>
+<p>This will be a single entity in the case of an individual
+subscription, otherwise it will be all the entities in the
+group subscription.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">EntityQuerySet</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A QuerySet of all the entities that are a part of
+this subscription.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="entity_event.models.EventQuerySet">
+<em class="property">class </em><tt class="descclassname">entity_event.models.</tt><tt class="descname">EventQuerySet</tt><a class="headerlink" href="#entity_event.models.EventQuerySet" title="Permalink to this definition">¶</a></dt>
+<dd><p>A custom QuerySet for Events.</p>
+<dl class="method">
+<dt id="entity_event.models.EventQuerySet.mark_seen">
+<tt class="descname">mark_seen</tt><big>(</big><em>self</em>, <em>medium</em><big>)</big><a class="headerlink" href="#entity_event.models.EventQuerySet.mark_seen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates EventSeen objects for the provided medium for every event
+in the queryset.</p>
+<p>Creating these EventSeen objects ensures they will not be
+returned when passing <tt class="docutils literal"><span class="pre">seen=False</span></tt> to any of the medium
+event retrieval functions, <tt class="docutils literal"><span class="pre">events</span></tt>, <tt class="docutils literal"><span class="pre">entity_events</span></tt>, or
+<tt class="docutils literal"><span class="pre">events_targets</span></tt>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="entity_event.models.EventManager">
+<em class="property">class </em><tt class="descclassname">entity_event.models.</tt><tt class="descname">EventManager</tt><a class="headerlink" href="#entity_event.models.EventManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>A custom Manager for Events.</p>
+<dl class="method">
+<dt id="entity_event.models.EventManager.create_event">
+<tt class="descname">create_event</tt><big>(</big><em>self</em>, <em>source</em>, <em>context</em>, <em>uuid</em>, <em>time_expires</em>, <em>actors</em>, <em>ignore_duplicates</em><big>)</big><a class="headerlink" href="#entity_event.models.EventManager.create_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create events with actors.</p>
+<p>This method can be used in place of <tt class="docutils literal"><span class="pre">Event.objects.create</span></tt>
+to create events, and the appropriate actors. It takes all the
+same keywords as <tt class="docutils literal"><span class="pre">Event.objects.create</span></tt> for the event
+creation, but additionally takes a list of actors, and can be
+told to not attempt to create an event if a duplicate event
+exists.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>source</strong> (<em>Source</em>) &#8211; A <tt class="docutils literal"><span class="pre">Source</span></tt> object representing where the
+event came from.</li>
+<li><strong>context</strong> (<a class="reference external" href="http://python.readthedocs.org/en/v2.7.2/library/stdtypes.html#dict" title="(in Python v2.7)"><em>dict</em></a>) &#8211; A dictionary containing relevant
+information about the event, to be serialized into
+JSON. It is possible to load additional context
+dynamically  when events are fetched. See the
+documentation on the <tt class="docutils literal"><span class="pre">context_loader</span></tt> field in
+<tt class="docutils literal"><span class="pre">Source</span></tt>.</li>
+<li><strong>uuid</strong> (<a class="reference external" href="http://python.readthedocs.org/en/v2.7.2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; A unique string for the event. Requiring a
+<tt class="docutils literal"><span class="pre">uuid</span></tt> allows code that creates events to ensure they do
+not create duplicate events. This id could be, for example
+some hash of the <tt class="docutils literal"><span class="pre">context</span></tt>, or, if the creator is
+unconcerned with creating duplicate events a call to
+python&#8217;s <tt class="docutils literal"><span class="pre">uuid1()</span></tt> in the <tt class="docutils literal"><span class="pre">uuid</span></tt> module.</li>
+<li><strong>time_expires</strong> (<em>datetime (optional)</em>) &#8211; If given, the default methods for
+querying events will not return this event after this time
+has passed.</li>
+<li><strong>actors</strong> (<em>(optional) List of entities or list of entity ids.</em>) &#8211; An <tt class="docutils literal"><span class="pre">EventActor</span></tt> object will be created for
+each entity in the list. This allows for subscriptions
+which are only following certain entities to behave
+appropriately.</li>
+<li><strong>ignore_duplicates</strong> (<em>(optional) Boolean</em>) &#8211; If <tt class="docutils literal"><span class="pre">True</span></tt>, a check will be made to
+ensure that an event with the give <tt class="docutils literal"><span class="pre">uuid</span></tt> does not exist
+before attempting to create the event. Setting this to
+<tt class="docutils literal"><span class="pre">True</span></tt> allows the creator of events to gracefully ensure
+no duplicates are created.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">Event</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The created event. Alternatively if a duplicate
+event already exists and <tt class="docutils literal"><span class="pre">ignore_duplicates</span></tt> is
+<tt class="docutils literal"><span class="pre">True</span></tt>, it will return <tt class="docutils literal"><span class="pre">None</span></tt>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="entity_event.models.EventManager.mark_seen">
+<tt class="descname">mark_seen</tt><big>(</big><em>self</em>, <em>medium</em><big>)</big><a class="headerlink" href="#entity_event.models.EventManager.mark_seen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates EventSeen objects for the provided medium for every event
+in the queryset.</p>
+<p>Creating these EventSeen objects ensures they will not be
+returned when passing <tt class="docutils literal"><span class="pre">seen=False</span></tt> to any of the medium
+event retrieval functions, <tt class="docutils literal"><span class="pre">events</span></tt>, <tt class="docutils literal"><span class="pre">entity_events</span></tt>, or
+<tt class="docutils literal"><span class="pre">events_targets</span></tt>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="entity_event.models.Event">
+<em class="property">class </em><tt class="descclassname">entity_event.models.</tt><tt class="descname">Event</tt><a class="headerlink" href="#entity_event.models.Event" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="docutils literal"><span class="pre">Event</span></tt> objects store information about events. By storing
+events, from a given source, with some context, they are made
+available to any <tt class="docutils literal"><span class="pre">Medium</span></tt> object with an appropriate
+subscription. Events can be created with
+<tt class="docutils literal"><span class="pre">Event.objects.create_event</span></tt>, documented above.</p>
+<p>When creating an event, the information about what occurred is
+stored in a JSON blob in the <tt class="docutils literal"><span class="pre">context</span></tt> field. This context can
+be any type of information that could be useful for displaying
+events on a given Medium. It is entirely the role of the
+application developer to ensure that there is agreement between
+what information is stored in <tt class="docutils literal"><span class="pre">Event.context</span></tt> and what
+information the code the processes and displays events on each
+medium expects.</p>
+<p>Events will usually be created by code that also created, or knows
+about the <tt class="docutils literal"><span class="pre">Source</span></tt> object that is required to create the event.
+To prevent storing unnecessary data in the context, this code can
+define a context loader function when creating this source, which
+can be used to dynamically fetch more data based on whatever
+limited amount of data makes sense to store in the context. This
+is further documented in the <tt class="docutils literal"><span class="pre">Source</span></tt> documentation.</p>
+<dl class="method">
+<dt id="entity_event.models.Event.get_context">
+<tt class="descname">get_context</tt><big>(</big><em>self</em><big>)</big><a class="headerlink" href="#entity_event.models.Event.get_context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves and populates the context for this event.</p>
+<p>At the minimum, whatever context was stored in the event is
+returned. If the source of the event provides a
+<tt class="docutils literal"><span class="pre">context_loader</span></tt>, any additional context created by that
+function will be included.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dictionary of the event&#8217;s context, with any
+additional context loaded.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="entity_event.models.EventActor">
+<em class="property">class </em><tt class="descclassname">entity_event.models.</tt><tt class="descname">EventActor</tt><a class="headerlink" href="#entity_event.models.EventActor" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="docutils literal"><span class="pre">EventActor</span></tt> objects encode what entities were involved in an
+event. They provide the information necessary to create &#8220;only
+following&#8221; subscriptions which route events only to the entities
+that are involved in the event.</p>
+<p><tt class="docutils literal"><span class="pre">EventActor</span></tt> objects should not be created directly, but should
+be created as part of the creation of <tt class="docutils literal"><span class="pre">Event</span></tt> objects, using
+<tt class="docutils literal"><span class="pre">Event.objects.create_event</span></tt>.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="entity_event.models.EventSeen">
+<em class="property">class </em><tt class="descclassname">entity_event.models.</tt><tt class="descname">EventSeen</tt><a class="headerlink" href="#entity_event.models.EventSeen" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="docutils literal"><span class="pre">EventSeen</span></tt> objects store information about where and when an
+event was seen. They store the medium that the event was seen on,
+and what time it was seen. This information is used by the event
+querying methods on <tt class="docutils literal"><span class="pre">Medium</span></tt> objects to filter events by whether
+or not they have been seen on that medium.</p>
+<p><tt class="docutils literal"><span class="pre">EventSeen</span></tt> objects should not be created directly, but should
+be created by using the <tt class="docutils literal"><span class="pre">EventQuerySet.mark_seen</span></tt> method,
+available on the QuerySets returned by the event querying methods.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../contributing.html" class="btn btn-neutral float-right" title="Contributing"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../advanced_features.html" class="btn btn-neutral" title="Advanced Features"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Ambition Inc..
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.2.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

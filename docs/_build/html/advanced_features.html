@@ -1,0 +1,323 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Features &mdash; entity_event 0.2.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="entity_event 0.2.0 documentation" href="index.html"/>
+        <link rel="next" title="Code documentation" href="ref/entity_event.html"/>
+        <link rel="prev" title="Quickstart and Basic Usage" href="quickstart.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> entity_event</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installation-with-pip">Installation with Pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#use-with-django">Use with Django</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart and Basic Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#creating-and-categorizing-events">Creating and Categorizing Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#managing-mediums-and-subscriptions-to-events">Managing Mediums and Subscriptions to Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#querying-events">Querying Events</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Advanced Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#custom-context-loaders">Custom Context Loaders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customizing-only-following-behavior">Customizing Only-Following Behavior</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ref/entity_event.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#running-the-tests">Running the tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#code-quality">Code Quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#code-styling">Code Styling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#building-the-docs">Building the docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#release-checklist">Release Checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#vulnerability-reporting">Vulnerability Reporting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#v0-2">v0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#v0-1">v0.1</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">entity_event</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Advanced Features</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/advanced_features.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="advanced-features">
+<h1>Advanced Features<a class="headerlink" href="#advanced-features" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="quickstart.html#quickstart"><em>Quickstart and Basic Usage</em></a> guide covers the common use cases of Django Entity
+Event. In addition to the basic uses for creating, storing, and
+querying events, there are some more advanced uses supported for
+making Django Entity Event more efficient and flexible.</p>
+<p>This guide will cover the following advanced use cases:</p>
+<ul class="simple">
+<li>Dynamically loading context using <tt class="docutils literal"><span class="pre">context_loader</span></tt></li>
+<li>Customizing the behavior of <tt class="docutils literal"><span class="pre">only_following</span></tt> by sub-classing
+<a class="reference internal" href="ref/entity_event.html#entity_event.models.Medium" title="entity_event.models.Medium"><tt class="xref py py-class docutils literal"><span class="pre">Medium</span></tt></a>.</li>
+</ul>
+<div class="section" id="custom-context-loaders">
+<h2>Custom Context Loaders<a class="headerlink" href="#custom-context-loaders" title="Permalink to this headline">¶</a></h2>
+<p>When events are created, it is up to the creator of the event to
+decide what information gets stored in the event&#8217;s <tt class="docutils literal"><span class="pre">context</span></tt>
+field. In many cases it makes sense to persist all of the data
+necessary to display the event to a user.</p>
+<p>In some cases, however the <tt class="docutils literal"><span class="pre">context</span></tt> of the event can be very large,
+and storing all of the information would mean duplicating a large
+amount of data that exists elsewhere in your database. It&#8217;s desirable
+to have all this data available in the <tt class="docutils literal"><span class="pre">context</span></tt> field, but it isn&#8217;t
+desirable to repeatedly duplicate large amounts of information.</p>
+<p>If the creator of the events can guarantee that some of the
+information about the event will always be available in the database,
+or computable from some subset of the data that could be stored in the
+context, they can use the <tt class="docutils literal"><span class="pre">Source.context_loader</span></tt> field to provide a
+path to an importable function to dynamically load the context when
+the events are fetched.</p>
+<p>If for example, we are creating events about photo tags, and we don&#8217;t
+want to persist a full path to the photo, we can simply store a <tt class="docutils literal"><span class="pre">id</span></tt>
+for the photo, and then use a context loader to load it
+dynamically. The function we would write to load the context would
+look something like</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># In module apps.photos.loaders</span>
+
+<span class="k">def</span> <span class="nf">load_photo_context</span><span class="p">(</span><span class="n">context</span><span class="p">):</span>
+    <span class="n">photo</span> <span class="o">=</span> <span class="n">Photo</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">context</span><span class="p">[</span><span class="s">&#39;photo_id&#39;</span><span class="p">])</span>
+    <span class="n">context</span><span class="p">[</span><span class="s">&#39;photo_path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">photo</span><span class="o">.</span><span class="n">path</span>
+    <span class="k">return</span> <span class="n">context</span>
+</pre></div>
+</div>
+<p>Then, when defining our source for this type of event we would include
+a path to this function in the <tt class="docutils literal"><span class="pre">context_loader</span></tt> field.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">entity_event</span> <span class="kn">import</span> <span class="n">Source</span>
+
+<span class="n">photo_tag_source</span> <span class="o">=</span> <span class="n">Source</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s">&quot;photo-tag&quot;</span><span class="p">,</span>
+    <span class="n">display_name</span><span class="o">=</span><span class="s">&quot;Photo Tag&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s">&quot;You are tagged in a photo&quot;</span><span class="p">,</span>
+    <span class="n">group</span><span class="o">=</span><span class="n">photo_group</span><span class="p">,</span>
+    <span class="n">context_loader</span><span class="o">=</span><span class="s">&#39;apps.photos.loaders.load_photo_path&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>With this setup, all of the additional information can by dynamically
+loaded into events, simply by calling <a class="reference internal" href="ref/entity_event.html#entity_event.models.Event.get_context" title="entity_event.models.Event.get_context"><tt class="xref py py-meth docutils literal"><span class="pre">Event.get_context</span></tt></a>.</p>
+<p>The <tt class="docutils literal"><span class="pre">Source</span></tt> model also uses django&#8217;s <tt class="docutils literal"><span class="pre">clean</span></tt> method to ensure
+that only valid importable functions get saved in the
+database. However, if this function is removed from the codebase,
+without a proper migration, attempting to load context for events with
+this source will fail.</p>
+<p>There are a number of trade-offs in using a context loader. If the
+underlying data is subject to change, accessing historic events could
+cause errors in the application. Additionally, a context loader that
+requires many runs to the database could cause accessing events to be
+a much more expensive operation. In either of these cases it makes
+more sense to store copies of the data in the <tt class="docutils literal"><span class="pre">context</span></tt> field of the
+event.</p>
+</div>
+<div class="section" id="customizing-only-following-behavior">
+<h2>Customizing Only-Following Behavior<a class="headerlink" href="#customizing-only-following-behavior" title="Permalink to this headline">¶</a></h2>
+<p>In the quickstart, we discussed the use of &#8220;only following&#8221;
+subscriptions to ensure that users only see the events that they are
+interested in. In this discussion, we mentioned that by default,
+entities follow themselves, and their super entities. This following
+relationship is defined in two methods on the
+<a class="reference internal" href="ref/entity_event.html#entity_event.models.Medium" title="entity_event.models.Medium"><tt class="xref py py-class docutils literal"><span class="pre">Medium</span></tt></a> model:
+<a class="reference internal" href="ref/entity_event.html#entity_event.models.Medium.followers_of" title="entity_event.models.Medium.followers_of"><tt class="xref py py-meth docutils literal"><span class="pre">Medium.followers_of</span></tt></a> and
+<a class="reference internal" href="ref/entity_event.html#entity_event.models.Medium.followed_by" title="entity_event.models.Medium.followed_by"><tt class="xref py py-meth docutils literal"><span class="pre">Medium.followed_by</span></tt></a>. These two methods are
+inverses of each other and are used by the code that fetches events to
+determine the semantics of &#8220;only following&#8221; subscriptions.</p>
+<p>It is possible to customize the behavior of these types of
+subscriptions by concretely inheriting from
+<a class="reference internal" href="ref/entity_event.html#entity_event.models.Medium" title="entity_event.models.Medium"><tt class="xref py py-class docutils literal"><span class="pre">Medium</span></tt></a>, and overriding these two
+functions. For example, we could define a type of medium that provides
+the opposite behavior, where entities follow themselves and their
+sub-entities.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">entity</span> <span class="kn">import</span> <span class="n">Entity</span><span class="p">,</span> <span class="n">EntityRelationship</span>
+<span class="kn">from</span> <span class="nn">entity_event</span> <span class="kn">import</span> <span class="n">Medium</span>
+
+<span class="k">class</span> <span class="nc">FollowSubEntitiesMedium</span><span class="p">(</span><span class="n">Medium</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">followers_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entities</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entities</span><span class="p">,</span> <span class="n">Entity</span><span class="p">):</span>
+            <span class="n">entities</span> <span class="o">=</span> <span class="n">Entity</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">entities</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="n">super_entities</span> <span class="o">=</span> <span class="n">EntityRelationship</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+            <span class="n">sub_entity__in</span><span class="o">=</span><span class="n">entities</span><span class="p">)</span><span class="o">.</span><span class="n">values_list</span><span class="p">(</span><span class="s">&#39;super_entity&#39;</span><span class="p">)</span>
+        <span class="n">followed_by</span> <span class="o">=</span> <span class="n">Entity</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+            <span class="n">Q</span><span class="p">(</span><span class="n">id__in</span><span class="o">=</span><span class="n">entities</span><span class="p">)</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">id__in</span><span class="o">=</span><span class="n">super_entities</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">followed_by</span>
+
+    <span class="k">def</span> <span class="nf">followed_by</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entities</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entities</span><span class="p">,</span> <span class="n">Entity</span><span class="p">):</span>
+            <span class="n">entities</span> <span class="o">=</span> <span class="n">Entity</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">entities</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="n">sub_entities</span> <span class="o">=</span> <span class="n">EntityRelationship</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+            <span class="n">super_entity__in</span><span class="o">=</span><span class="n">entities</span><span class="p">)</span><span class="o">.</span><span class="n">values_list</span><span class="p">(</span><span class="s">&#39;sub_entity&#39;</span><span class="p">)</span>
+        <span class="n">followers_of</span> <span class="o">=</span> <span class="n">Entity</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+            <span class="n">Q</span><span class="p">(</span><span class="n">id__in</span><span class="o">=</span><span class="n">entities</span><span class="p">)</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">id__in</span><span class="o">=</span><span class="n">sub_entities</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">followers_of</span>
+</pre></div>
+</div>
+<p>With these methods overridden, the behavior of the methods
+<tt class="docutils literal"><span class="pre">FollowsubEntitiesMedium.events</span></tt>,
+<tt class="docutils literal"><span class="pre">FollowsubEntitiesMedium.entity_events</span></tt>, and
+<tt class="docutils literal"><span class="pre">FollowsubEntitiesMedium.events_targets</span></tt> should all behave as
+expected.</p>
+<p>It is entirely possible to define more complex following
+relationships, potentially drawing on different source of information
+for what entities should follow what entities. The only important
+consideration is that the <tt class="docutils literal"><span class="pre">followers_of</span></tt> method must be the inverse
+of the <tt class="docutils literal"><span class="pre">followed_by</span></tt> method. That is, for any set of entities, it
+must hold that</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">followers_of</span><span class="p">(</span><span class="n">followed_by</span><span class="p">(</span><span class="n">entities</span><span class="p">))</span> <span class="o">==</span> <span class="n">entities</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">followed_by</span><span class="p">(</span><span class="n">followers_of</span><span class="p">(</span><span class="n">entities</span><span class="p">))</span> <span class="o">==</span> <span class="n">entities</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ref/entity_event.html" class="btn btn-neutral float-right" title="Code documentation"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quickstart.html" class="btn btn-neutral" title="Quickstart and Basic Usage"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Ambition Inc..
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.2.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
