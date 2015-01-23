@@ -14,7 +14,9 @@ class AuthorizedServiceTest(unittest.TestCase):
     @patch('service_account_auth.AuthorizedService._get_authorized_http')
     def test_init(self, get_http_mock):
         get_http_mock.return_value = Http()
-        authorized_service = AuthorizedService('test-proj', 'bigquery', 'v2')
+        authorized_service = AuthorizedService(
+            'test-proj', 'bigquery', 'v2', email='test@example.com', key='testkey'
+        )
         self.assertTrue(authorized_service.service)
         self.assertTrue(authorized_service.auth_http)
 
@@ -37,8 +39,8 @@ class AuthorizedServiceGetAuthorizedHttpTest(unittest.TestCase):
         """
         self.mock_auth = MagicMock()
         self.mock_auth.service_name = 'bigquery'
-        self.mock_auth.email='test@example.com'
-        self.mock_auth.key='testkey'
+        self.mock_auth.email = 'test@example.com'
+        self.mock_auth.key = 'testkey'
         self.mock_auth._get_authorized_http = AuthorizedService.__dict__['_get_authorized_http']
 
     def test_returns_http_object(self):
