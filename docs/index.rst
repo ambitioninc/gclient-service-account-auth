@@ -1,7 +1,7 @@
 GClient Service Account Auth
 ============================
 
-Authorizing server to server communications with Google's APIs should
+Authorizing server-to-server communications with Google's APIs should
 be easy. However, it can be difficult to understand how to do
 authorization based on Google's `Service Accounts`_, instead of the
 better-documented three-party oauth flow. This library attempts to
