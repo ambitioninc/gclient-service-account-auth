@@ -13,9 +13,9 @@ three-party oauth flow.
 Creating an `AuthorizedService` object
 --------------------------------------
 
-To use the GClient Service Account libary, you must first have a
+To use the GClient Service Account library, you must first have a
 service account set up through Google's Developer Console. Before
-continuing with this quickstart guide, follow Google's documentaiton
+continuing with this quickstart guide, follow Google's documentation
 on `Creating a Service Account`_
 
 While creating a service account take note of the following:
@@ -45,7 +45,7 @@ object is as simple as
 In the example above, we create an AuthorizedService object for Google
 Analytics. Obviously, the values for ``project_id``, ``email``, and
 ``key`` would need to be replaced. Once this object, ``ga_service`` is
-created, all the functionallity of the Google Analytics Python API can
+created, all the functionality of the Google Analytics Python API can
 be accessed through the ``ga_service.service`` attribute. This
 ``service`` attribute is authenticated with Google, with the
 authorizations associated with the service account.
@@ -57,7 +57,7 @@ Storing the credentials
 
 It is generally bad practice to store sensitive information in
 code. For this reason, the GClient Service Account Auth supports
-accessing sensitive information from environmant variables. Instead of
+accessing sensitive information from environment variables. Instead of
 passing the email and key into ``AuthorizedService`` directly, this
 information can be stored in environment variables.
 
@@ -65,7 +65,7 @@ If you store the service account email in the environment variable
 ``GCLIENT_SERVICE_ACCOUNT_EMAIL``, and a path to the private key in
 the environment variable ``GCLIENT_KEY_LOCATION``, then this library
 will automatically fetch the appropriate information, without you
-having to include the ``email`` and ``key`` arguements for
+having to include the ``email`` and ``key`` arguments for
 ``AuthorizedService``.
 
 If this information is stored in environment variables, creating an
@@ -111,7 +111,7 @@ to our site tracked by google analytics.
 
 Knowing what methods to call does require some knowledge of what
 methods are available. For Google Analytics in particular it would be
-useful to use an external libary to simplify the interface.
+useful to use an external library to simplify the interface.
 
 .. _Google Analytics API: https://github.com/google/google-api-python-client
 
@@ -139,6 +139,6 @@ Analytics Read-only
 Analytics Read/Write
     Created with ``AuthorizedService('proj-id', 'analytics', 'v3')``.
 
-For many of those not listed here, suport is as simple as providing
-the correct scope url for the api. Contributions are appreciated, even
+For many of those not listed here, support is as simple as providing
+the correct scope url for the API. Contributions are appreciated, even
 as simple as filing an issue. See :ref:`contributing`.

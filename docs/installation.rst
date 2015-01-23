@@ -10,5 +10,5 @@ Installation with Pip
 GClient Service Account Auth is available on PyPi. It can be installed
 using ``pip``::
 
-    pip install django-entity-event
+    pip install gclient-service-account-auth
 

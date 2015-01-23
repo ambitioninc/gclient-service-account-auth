@@ -7,7 +7,7 @@ authorization based on Google's `Service Accounts`_, instead of the
 better-documented three-party oauth flow. This library attempts to
 streamline this process.
 
-It makes authetication and authorization as simple as creating an
+It makes authentication and authorization as simple as creating an
 instance of the `AuthorizedService` class, with the name of your
 project and the name of the API to authorize for. To get started, see
 the :ref:`quickstart` guide.
