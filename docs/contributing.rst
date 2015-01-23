@@ -8,15 +8,15 @@ involves big changes, please file a ticket before making a pull request! We
 want to make sure you don't spend your time coding something that might not fit
 the scope of the project.
 
-.. _ambitioninc repository: https://github.com/ambitioninc/django-entity-event/issues
+.. _ambitioninc repository: https://github.com/ambitioninc/gclient-service-account-auth/issues
 
 Running the tests
 -----------------
 
 To get the source source code and run the unit tests, run::
 
-    $ git clone git://github.com/ambitioninc/django-entity-event.git
-    $ cd django-entity-event
+    $ git clone git://github.com/ambitioninc/gclient-service-account-auth.git
+    $ cd gclient-service-account-auth
     $ virtualenv env
     $ . env/bin/activate
     $ python setup.py install
@@ -49,7 +49,7 @@ Please arrange imports with the following style
     from django.conf import settings
 
     # Local package imports
-    from entity_event.version import __version__
+    from service_account_auth.version import __version__
 
 Please follow `Google's python style`_ guide wherever possible.
 
@@ -61,7 +61,7 @@ Building the docs
 When in the project directory::
 
     $ pip install -r requirements/docs.txt
-    $ pip uninstall -y django-entity-event && python setup.py install
+    $ pip uninstall -y gclient-service-account-auth && python setup.py install
     $ cd docs && make html
     $ open docs/_build/html/index.html
 
@@ -70,7 +70,7 @@ Release Checklist
 
 Before a new release, please go through the following checklist:
 
-* Bump version in entity_event/version.py
+* Bump version in service_account_auth/version.py
 * Add a release note in docs/release_notes.rst
 * Git tag the version
 * Upload to pypi

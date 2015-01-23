@@ -4,14 +4,12 @@ Release Notes
 v0.2
 ----
 
-* This release provides the core features of django-entity-event
-  - Event Creation
-  - Subscription Management
-  - Event Querying
-  - Admin Panel
-  - Documentation
+* This release includes the following updates
+  - Options for passing email and keys to AuthorizedService.
+  - Better documentation.
+  - Python 3 support.
 
 v0.1
 ----
 
-* This is the initial release of django-entity-event.
+* This is the initial release of gclient-service-account-auth.
