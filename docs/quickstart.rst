@@ -122,3 +122,23 @@ The `GA Grab library`_ can be used to make querying Google Analytics
 much easier. 
 
 .. _GA Grab library: https://github.com/ambitioninc/gagrab
+
+
+Supported Services
+------------------
+
+Google provides python client libraries for many of its APIs. This
+library can create authorized service objects for the following APIs:
+
+BigQuery
+    Created with ``AuthorizedService('proj-id', 'bigquery', 'v2')``.
+
+Analytics Read-only
+    Created with ``AuthorizedService('proj-id', 'analytics-read', 'v3')``.
+
+Analytics Read/Write
+    Created with ``AuthorizedService('proj-id', 'analytics', 'v3')``.
+
+For many of those not listed here, suport is as simple as providing
+the correct scope url for the api. Contributions are appreciated, even
+as simple as filing an issue. See :ref:`contributing`.

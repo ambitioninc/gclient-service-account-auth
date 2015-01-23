@@ -1,120 +1,49 @@
-Client API Service Account Authorization
-==================================================
+GClient API Service Account Authorization
+=========================================
 
-Easily create an authorized service-object for interacting with
-google's client APIs server to server.
+.. image:: https://travis-ci.org/ambitioninc/gclient-service-account-auth.png
+   :target: https://travis-ci.org/ambitioninc/gclient-service-account-auth
 
+.. image:: https://coveralls.io/repos/ambitioninc/gclient-service-account-auth/badge.png?branch=develop
+    :target: https://coveralls.io/r/ambitioninc/gclient-service-account-auth?branch=develop
 
-Overview
---------------------------------------------------
+.. image:: https://pypip.in/v/gclient-service-account-auth/badge.png
+    :target: https://crate.io/packages/gclient-service-account-auth/
+    :alt: Latest PyPI version
 
-Do you have a google service account, and want to be able to
-programatically access google APIs without having to have a user
-present to validate an OAuth2 flow?
+.. image:: https://pypip.in/d/gclient-service-account-auth/badge.png
+    :target: https://crate.io/packages/gclient-service-account-auth/
+    :alt: Number of PyPI downloads
 
-This library makes it simple to create an authorized service object
-based on three pieces of information:
+Authorizing server to server communications with Google's APIs should
+be easy. However, it can be difficult to understand how to use
+server-to-server authorization, based on Google's `Service Accounts`_,
+instead of the better-documented three-party oauth flow. This library
+attempts to streamline this process.
 
-1. A google "Project Id."
-2. A service account email.
-3. The service account's private key.
+It makes authetication and authorization as simple as creating an
+instance of the `AuthorizedService` class, with the name of your
+project and the name of the API to authorize for. To get started, see
+the `quickstart`_ guide.
 
-After providing these pieces of information, you will be able to make
-server to server requests to any supported API.
-
+.. _Service Accounts: https://developers.google.com/accounts/docs/OAuth2ServiceAccount
 
 Installation
---------------------------------------------------
+------------
+To install the latest release, type::
 
-This project is in PyPi and is installable with ``pip``.
+    pip install gclient-service-account-auth
 
-.. code-block:: none
+To install the latest code directly from source, type::
 
-   pip install gclient-service-account-auth
+    pip install git+git://github.com/ambitioninc/gclient-service-account-auth.git
 
-Because this library depends on the cryptography library, which has
-extensions written in C, OSX Mavericks users may experience difficulty
-with the ``pip`` installation. If the error is akin to "command 'cc'
-failed with exit status 1" Executing (in bash):
+Documentation
+=============
 
-.. code-block:: none
+Full documentation is available at http://gclient-service-account-auth.readthedocs.org
 
-   export CFLAGS=""
+License
+=======
+MIT License (see LICENSE)
 
-before running ``pip install`` should fix the problem.
-
-Usage
---------------------------------------------------
-
-When communicating with Google's APIs programatically, not on behalf
-of a user it makes sense to sign a token with a private key, rather
-than perform an OAuth flow.
-
-To get a private key that google will accept do the following:
-
-1. Create a project at `Developer Console`_ and note it's project-id
-
-2. Within that project's "APIs & auth" section, enable the appropriate
-   API.
-
-3. Within that project's "APIs & auth" section, under "Credentials"
-   click "Create New Client ID" and create a "Service Account."
-
-4. Place the created service accounts "email address" in an
-   environment variable on your server called
-   "DEFAULT_SERVICE_ACCOUNT_EMAIL."
-
-5. Generate a new keypair for that service account, store it on your
-   server, and create a environment variable "DEFAULT_KEY_LOCATION"
-   containing a path to that key.
-
-Once the steps above are complete, it's simple to create an authorized
-service object that can access a given API:
-
-.. code-block:: python
-
-   from service_account_auth import AuthorizedService
-
-   my_analytics_service = AuthorizedService(
-       project_id='my-projectid-555',
-       service_name='analytics',
-       service_version='v3'
-   )
-
-The code above will create an authorized service object which can be
-used to access google analytics API endpoints:
-
-.. code-block:: python
-
-   s = my_analytics_service.service
-   analytics_account_list = s.management().accounts().list().execute()
-
-Likewise, by varying the ``service_name`` and ``service_version``
-arguments, you can access any available API with the same format and
-credentials.
-
-.. _Developer Console: https://console.developers.google.com/
-
-Supported Services
---------------------------------------------------
-
-Google provides python client libraries for many of its APIs. This
-library can create authorized service objects for the following APIs:
-
-BigQuery
-    Created with ``AuthorizedService('proj-id', 'bigquery', 'v2')``.
-
-Analytics Read-only
-    Created with ``AuthorizedService('proj-id', 'analytics-read', 'v3')``.
-
-Analytics Read/Write
-    Created with ``AuthorizedService('proj-id', 'analytics', 'v3')``.
-
-For many of those not listed here, suport is as simple as providing
-the correct scope url for the api. See 'Contributions.'
-
-Contributions
---------------------------------------------------
-
-Contributions are welcome through github pull requests or
-issues. Especially for increasing the available scope of services.
