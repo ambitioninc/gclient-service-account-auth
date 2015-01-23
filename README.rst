@@ -25,6 +25,8 @@ the `quickstart`_ guide.
 
 .. _Service Accounts: https://developers.google.com/accounts/docs/OAuth2ServiceAccount
 
+.. _quickstart: http://gclient-service-account-auth.readthedocs.org/en/latest/quickstart.html
+
 Installation
 ------------
 To install the latest release, type::
