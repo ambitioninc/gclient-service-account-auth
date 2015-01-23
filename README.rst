@@ -4,9 +4,6 @@ GClient API Service Account Authorization
 .. image:: https://travis-ci.org/ambitioninc/gclient-service-account-auth.png
    :target: https://travis-ci.org/ambitioninc/gclient-service-account-auth
 
-.. image:: https://coveralls.io/repos/ambitioninc/gclient-service-account-auth/badge.png?branch=develop
-    :target: https://coveralls.io/r/ambitioninc/gclient-service-account-auth?branch=develop
-
 .. image:: https://pypip.in/v/gclient-service-account-auth/badge.png
     :target: https://crate.io/packages/gclient-service-account-auth/
     :alt: Latest PyPI version
@@ -15,7 +12,7 @@ GClient API Service Account Authorization
     :target: https://crate.io/packages/gclient-service-account-auth/
     :alt: Number of PyPI downloads
 
-Authorizing server to server communications with Google's APIs should
+Authorizing server-to-server communications with Google's APIs should
 be easy. However, it can be difficult to understand how to do
 authorization based on Google's `Service Accounts`_, instead of the
 better-documented three-party oauth flow. This library
