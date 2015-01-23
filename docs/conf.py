@@ -6,21 +6,6 @@ import os
 import re
 
 # -- Django configuration -------------------------------------------------
-import sys
-sys.path.insert(0, os.path.abspath('..'))
-from settings import configure_settings
-configure_settings()
-
-
-PY2 = sys.version_info[0] == 2
-if PY2:
-    from django.utils.encoding import force_unicode
-else:
-   def force_unicode(str):
-        return str
-
-from django.utils.html import strip_tags
-
 
 def get_version():
     """
@@ -71,7 +56,6 @@ pygments_style = 'sphinx'
 
 intersphinx_mapping = {
     'python': ('http://python.readthedocs.org/en/v2.7.2/', None),
-    'django': ('http://django.readthedocs.org/en/latest/', None),
     #'celery': ('http://celery.readthedocs.org/en/latest/', None),
 }
 
@@ -148,45 +132,3 @@ texinfo_documents = [
    u'Erik Swanson', 'gclient-service-account-auth', 'A short description',
    'Miscellaneous'),
 ]
-
-
-# def process_django_model_docstring(app, what, name, obj, options, lines):
-#     """
-#     Does special processing for django model docstrings, making docs for
-#     fields in the model.
-#     """
-#     # This causes import errors if left outside the function
-#     from django.db import models
-    
-#     # Only look at objects that inherit from Django's base model class
-#     if inspect.isclass(obj) and issubclass(obj, models.Model):
-#         # Grab the field list from the meta class
-#         fields = obj._meta.fields
-    
-#         for field in fields:
-#             # Decode and strip any html out of the field's help text
-#             help_text = strip_tags(force_unicode(field.help_text))
-            
-#             # Decode and capitalize the verbose name, for use if there isn't
-#             # any help text
-#             verbose_name = force_unicode(field.verbose_name).capitalize()
-            
-#             if help_text:
-#                 # Add the model field to the end of the docstring as a param
-#                 # using the help text as the description
-#                 lines.append(u':param %s: %s' % (field.attname, help_text))
-#             else:
-#                 # Add the model field to the end of the docstring as a param
-#                 # using the verbose name as the description
-#                 lines.append(u':param %s: %s' % (field.attname, verbose_name))
-                
-#             # Add the field's type to the docstring
-#             lines.append(u':type %s: %s' % (field.attname, type(field).__name__))
-    
-#     # Return the extended docstring
-#     return lines  
-
-
-# def setup(app):
-#     # Register the docstring processor with sphinx
-#     app.connect('autodoc-process-docstring', process_django_model_docstring)
