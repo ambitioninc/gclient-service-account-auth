@@ -16,9 +16,9 @@ GClient API Service Account Authorization
     :alt: Number of PyPI downloads
 
 Authorizing server to server communications with Google's APIs should
-be easy. However, it can be difficult to understand how to use
-server-to-server authorization, based on Google's `Service Accounts`_,
-instead of the better-documented three-party oauth flow. This library
+be easy. However, it can be difficult to understand how to do
+authorization based on Google's `Service Accounts`_, instead of the
+better-documented three-party oauth flow. This library
 attempts to streamline this process.
 
 It makes authetication and authorization as simple as creating an

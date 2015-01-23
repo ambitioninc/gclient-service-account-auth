@@ -5,7 +5,8 @@ import inspect
 import os
 import re
 
-# -- Django configuration -------------------------------------------------
+import sys
+sys.path.insert(0, os.path.abspath('..'))
 
 def get_version():
     """
