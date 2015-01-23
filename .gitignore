@@ -21,6 +21,10 @@ htmlcov/
 
 # Virtualenv
 env/
+venv/
 
 # OSX
 .DS_Store
+
+# Documentation artifacts
+docs/_build/
