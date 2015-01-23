@@ -1,8 +1,11 @@
 Installation
 ============
 
-GClient Service Account Auth is compatible with Python versions 2.7,
-3.3, and 3.4.
+GClient Service Account Auth is compatible with Python versions
+2.7. For it to work with Python 3, Google's underlying library,
+google-api-python-client will need to `support python 3`_.
+
+.. _support python 3: https://github.com/google/google-api-python-client/issues/3
 
 Installation with Pip
 ---------------------

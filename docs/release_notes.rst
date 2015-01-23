@@ -7,7 +7,6 @@ v0.2
 * This release includes the following updates
   - Options for passing email and keys to AuthorizedService.
   - Better documentation.
-  - Python 3 support.
 
 v0.1
 ----
