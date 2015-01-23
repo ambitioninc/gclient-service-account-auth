@@ -4,14 +4,13 @@ python:
   - '3.3'
   - '3.4'
 install:
-  - pip install coveralls flake8 nose>=1.3.0
-  - python setup.py install
+  - pip install -q coveralls flake8
   - pip install -r requirements/docs.txt
-before_script:
-  - flake8 . --max-line-length=120 --max-complexity=10 --exclude='env,*.egg'
 script:
   - flake8 .
-  - python setup.py nosetests
+  - coverage run setup.py test
+  - coverage report --fail-under=100
+  - python setup.py install
   - cd docs && make html
 after_success:
   coveralls
