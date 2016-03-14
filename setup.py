@@ -37,8 +37,8 @@ setup(
     ],
     license='MIT',
     install_requires=[
-        'httplib2>=0.9',
-        'google-api-python-client>=1.2',
+        'oauth2client<2.0',
+        'google-api-python-client>=1.2,<1.5',
         'pyopenssl>=0.14',
     ],
     tests_require=[

@@ -1,6 +1,11 @@
 Release Notes
 =============
 
+v0.2.2
+------
+
+* Pinned requirements <2.0 oauth2client to avoid having to rewrite consuming components
+
 v0.2
 ----
 
