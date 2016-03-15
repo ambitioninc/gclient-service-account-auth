@@ -76,7 +76,8 @@ class AuthorizedService(object):
         scopes = {
             'bigquery': 'https://www.googleapis.com/auth/bigquery',
             'analytics-read': 'https://www.googleapis.com/auth/analytics.readonly',
-            'analytics': 'https://www.googleapis.com/auth/analytics'
+            'analytics': 'https://www.googleapis.com/auth/analytics',
+            'calendar': 'https://www.googleapis.com/auth/calendar',
         }
         credentials = SignedJwtAssertionCredentials(
             self.email,
