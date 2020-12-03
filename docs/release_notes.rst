@@ -1,6 +1,11 @@
 Release Notes
 =============
 
+v0.3
+----
+
+* Bumped google api python client dependency
+
 v0.2
 ----
 
