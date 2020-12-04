@@ -4,11 +4,11 @@ GClient API Service Account Authorization
 .. image:: https://travis-ci.org/ambitioninc/gclient-service-account-auth.png
    :target: https://travis-ci.org/ambitioninc/gclient-service-account-auth
 
-.. image:: https://pypip.in/v/gclient-service-account-auth/badge.png
+.. image:: https://img.shields.io/pypi/v/gclient-service-account-auth.svg
     :target: https://crate.io/packages/gclient-service-account-auth/
     :alt: Latest PyPI version
 
-.. image:: https://pypip.in/d/gclient-service-account-auth/badge.png
+.. image:: https://img.shields.io/pypi/dm/gclient-service-account-auth.svg
     :target: https://crate.io/packages/gclient-service-account-auth/
     :alt: Number of PyPI downloads
 
